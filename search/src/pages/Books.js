@@ -6,8 +6,18 @@ function Books() {
     title: ""
   })
 
+  function loadBooks() {
+
+  }
+
 
   function handleInputChange(event) {
-    event.target
+    const { name, value} = event.target;
+    setFormInput({...formInput, [name] : value})
+  }
+
+  function handleFormSubmit(){
+    event.preventDefault();
+
   }
 }
