@@ -3,7 +3,7 @@ import React from "react";
 function Nav() {
   return(
     <nav class="navbar navbar-light bg-light">
-      Hello From Apple World
+      Welcome to Google Book Search
     </nav>
   
  
