@@ -1,26 +1,41 @@
-import React, { useEffect, useState} from "react";
-
-function Books() {
-  const[books, setBooks] = useState([])
-  const [formInput, setFormInput] = useState({
-    title: ""
-  })
-
-  function loadBooks() {
-
-  }
+import React, {useState} from "react";
+import SearchForm from "../components/SearchForm";
+import axios from "axios";
 
 
-  function handleInputChange(event) {
-    const { name, value} = event.target;
-    setFormInput({...formInput, [name] : value})
-  }
+function Books(){
 
-  function handleFormSubmit(){
+  const [booksArray, setBooksArray] = useState([]);
+  let query
+  const handleInputChange = (event) => {
     event.preventDefault();
-
-  }
-  return(
+    console.log(event.target.value);
+  query = event.target.value;
+  };
+   const handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log("event is..")
+    console.log(event.target);
     
-  )
+     axios({
+      method: 'get',
+      url: 'https://www.googleapis.com/books/v1/volumes?q=' + query
+    }) .then(response => {
+        console.log(response);
+        let data = response.data.items;
+        setBooksArray({...booksArray, data});
+        console.log(booksArray);
+      })
+    }
+    return(
+<div>
+  <SearchForm
+  handleInputChange={handleInputChange}
+  handleFormSubmit={handleFormSubmit}
+  booksArray={booksArray}
+  />
+</div>
+    );
 }
+
+export default Books;

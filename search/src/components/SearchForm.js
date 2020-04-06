@@ -1,55 +1,33 @@
 import React from "react";
 import axios from "axios";
+import { Segment, Header, Input, Button} from "semantic-ui-react"
+import ResultList from "./ResultList";
 var query = "";
 
-class SearchForm extends React.Component{
-  
-  
-  handleInputChange(event) {
-    event.preventDefault();
-      // const { searchField } = event.target;
-      // setFormObject({...formObject, search})
-       console.log(event.target.value);
-       query = event.target.value
-  };
-   handleFormSubmit(event){
-    event.preventDefault();
-    console.log("event is..")
-    console.log(event.target);
-    
-     axios({
-      method: 'get',
-      url: 'https://www.googleapis.com/books/v1/volumes?q=' + query
-    }) .then(function (response) {
-        console.log(response);
-        const booksArray = response.data.items;
-        console.log(booksArray);
-      })
-    }
+function SearchForm({handleInputChange, handleFormSubmit, booksArray}){
 
-  render() {
   return (
-    <form onSubmit={this.handleFormSubmit}>
-      <div className="form-group">
+    <Segment>
+      <Header content = "The world of books awaits..."/>
         {/* <label htmlFor="search">Search:</label> */}
-        <input
-          onChange={this.handleInputChange}
+        <Input
+          size="huge"
+          onChange={handleInputChange}
           
-          value={this.search}
+          // value={this.search}
           name="search"
           type="text"
           className="form-control"
           placeholder="Search Google Books"
           id="search"
         />
-       
-        <br/>
-        <button onClick={(e) => this.handleFormSubmit(e)} className="btn btn-primary mt-3">
+  
+        <Button onClick={(e) => handleFormSubmit(e)} inverted color="facebook">
           Search
-        </button>
-      </div>
-    </form>
+        </Button>
+        <ResultList books={ booksArray}/>
+    </Segment>
   );
 }
-}
+
 export default SearchForm;

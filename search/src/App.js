@@ -1,11 +1,16 @@
 import React from 'react';
 //import logo from './logo.svg';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import './App.css';
 import {List, ListItem} from "./components/List"
 import Nav from "./components/Nav";
 import SearchForm from './components/SearchForm';
 import { Col, Row, Container } from "./components/Grid";
+import ResultList from "./components/ResultList"
 import axios from "axios"
+import MyList from "./pages/MyList";
+import Books from "./pages/Books";
+
 
 //import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
 
@@ -35,19 +40,24 @@ function App() {
 
 
   return (
-  <Container>
-    <Row>
-    <Col size="md-12">
-    <div>
-        <Nav />
-      <SearchForm/>
-    </div>
-    </Col>
-    <List>
-    </List>
-    </Row>
-   </Container>
-  );
+    <Container>
+      <Router>
+      <Row>
+      <Col size="md-12">
+      <div>
+          <Nav />
+          <Route exact path="/" component={Books} />
+          <Route exact path="/mylist" component={MyList} />
+
+
+      </div>
+      </Col>
+      <List>
+      </List>
+      </Row>
+      </Router>
+    </Container>
+    );
 }
 
 export default App;
