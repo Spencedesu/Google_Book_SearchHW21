@@ -4,6 +4,7 @@ var query = "";
 
 class SearchForm extends React.Component{
   
+  
   handleInputChange(event) {
     event.preventDefault();
       // const { searchField } = event.target;
@@ -21,6 +22,8 @@ class SearchForm extends React.Component{
       url: 'https://www.googleapis.com/books/v1/volumes?q=' + query
     }) .then(function (response) {
         console.log(response);
+        const booksArray = response.data.items;
+        console.log(booksArray);
       })
     }
 

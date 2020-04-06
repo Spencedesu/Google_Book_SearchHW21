@@ -14,24 +14,24 @@ import axios from "axios"
 
 function App() {
 
-  function handleInputChange(event) {
-    event.preventDefault();
-      const { name, value } = event.target;
-      // setFormObject({...formObject, search})
-       console.log(event);
-  };
-  function handleFormSubmit(event){
-    event.preventDefault();
-    console.log("event is..")
-    console.log(event);
+  // function handleInputChange(event) {
+  //   event.preventDefault();
+  //     const { name, value } = event.target;
+  //     // setFormObject({...formObject, search})
+  //      console.log(event);
+  // };
+  // function handleFormSubmit(event){
+  //   event.preventDefault();
+  //   console.log("event is..")
+  //   console.log(event);
     
-     axios({
-      method: 'get',
-      url: 'https://www.googleapis.com/books/v1/volumes?q='+ event.target.name,
-    }) .then(function (response) {
-        console.log(response);
-      })
-    }
+  //    axios({
+  //     method: 'get',
+  //     url: 'https://www.googleapis.com/books/v1/volumes?q='+ event.target.name,
+  //   }) .then(function (response) {
+  //       console.log(response);
+  //     })
+  //   }
 
 
   return (
@@ -41,32 +41,15 @@ function App() {
     <div>
         <Nav />
       <SearchForm/>
-      
     </div>
     </Col>
     <List>
-
     </List>
     </Row>
    </Container>
-
   );
 }
 
 export default App;
 
 
-{/* <Router>
-      <div>
-        <Nav />
-        <Switch>
-          <Route exact path={"/", "/books"}>
-          <Books />
-          </Route>
-          <Route exact path ="/books/:id">
-            <Detail />
-          </Route>
-        </Switch>
-      
-      </div>
-    </Router> */}
