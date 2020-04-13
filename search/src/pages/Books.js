@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import SearchForm from "../components/SearchForm";
 import axios from "axios";
+import ResultList from "../components/ResultList";
 
 
 function Books(){
@@ -34,6 +35,7 @@ function Books(){
   handleFormSubmit={handleFormSubmit}
   booksArray={booksArray}
   />
+  <ResultList/>
 </div>
     );
 }

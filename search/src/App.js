@@ -7,17 +7,37 @@ import Nav from "./components/Nav";
 import SearchForm from './components/SearchForm';
 import { Col, Row, Container } from "./components/Grid";
 import ResultList from "./components/ResultList"
-import axios from "axios"
+import axios from "axios";
 import MyList from "./pages/MyList";
 import Books from "./pages/Books";
 
 
-//import { BrowserRouter as Router, Route, Switch} from "react-router-dom"
-
-
-  
-
 function App() {
+
+  return (
+    <Container>
+      <Router>
+      <Row>
+      <Col size="md-16">
+      <div>
+          <Nav />
+          <Route exact path="/" component={Books} />
+          <Route exact path="/mylist" component={MyList} />
+
+
+      </div>
+      </Col>
+      <List>
+      </List>
+      </Row>
+      </Router>
+    </Container>
+    );
+}
+
+export default App;
+
+
 
   // function handleInputChange(event) {
   //   event.preventDefault();
@@ -37,29 +57,5 @@ function App() {
   //       console.log(response);
   //     })
   //   }
-
-
-  return (
-    <Container>
-      <Router>
-      <Row>
-      <Col size="md-12">
-      <div>
-          <Nav />
-          <Route exact path="/" component={Books} />
-          <Route exact path="/mylist" component={MyList} />
-
-
-      </div>
-      </Col>
-      <List>
-      </List>
-      </Row>
-      </Router>
-    </Container>
-    );
-}
-
-export default App;
 
 

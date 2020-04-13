@@ -15,12 +15,10 @@ function Nav() {
         <Header
         as="h2"
         textAlign="center">
-            <Button
-            size="huge"  color="google plus"  >
+            <Button href="/"size="huge"  color="google plus"  >
               Search
             </Button>
-            <Button
-            size="huge" color="facebook">
+            <Button href="/mylist"size="huge" color="facebook">
               My List
             </Button>
 

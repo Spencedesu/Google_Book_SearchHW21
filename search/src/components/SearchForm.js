@@ -9,7 +9,6 @@ function SearchForm({handleInputChange, handleFormSubmit, booksArray}){
   return (
     <Segment>
       <Header content = "The world of books awaits..."/>
-        {/* <label htmlFor="search">Search:</label> */}
         <Input
           size="huge"
           onChange={handleInputChange}
