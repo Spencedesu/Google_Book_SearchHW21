@@ -3,9 +3,10 @@ import { Component } from "react";
 import {Segment, Header, Item} from "semantic-ui-react";
 
 
+
 function ResultList({books}) {
    const populateResults= (searchResult) => {
-    const books = {}
+    
   }
     return (
       <div>

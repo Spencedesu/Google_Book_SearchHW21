@@ -35,7 +35,7 @@ function Books(){
   handleFormSubmit={handleFormSubmit}
   booksArray={booksArray}
   />
-  <ResultList/>
+ 
 </div>
     );
 }
