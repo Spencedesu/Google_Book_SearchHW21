@@ -20,7 +20,7 @@ function App() {
       <Row>
       <Col size="md-16">
       <div>
-          <Nav />
+          
           <Route exact path="/" component={Books} />
           <Route exact path="/mylist" component={MyList} />
 

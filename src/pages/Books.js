@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import SearchForm from "../components/SearchForm";
 import axios from "axios";
 import ResultList from "../components/ResultList";
+import Nav from "../components/Nav";
 
 
 function Books(){
@@ -30,6 +31,7 @@ function Books(){
     }
     return(
 <div>
+  <Nav/>
   <SearchForm
   handleInputChange={handleInputChange}
   handleFormSubmit={handleFormSubmit}
