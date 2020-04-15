@@ -18,7 +18,7 @@ app.post("/mylist", )
 // const db = mongojs(MyList, collections);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://googlebooks");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
 
 // Start the API server
 app.listen(PORT, function() {
